@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colorPicker</title>
+<style>
+    *{margin: 0 ;
+        padding:0;
+    }
+    #wrap{
+        background-color: #333;
+        height: 100vh;
+        /* 下記の2行で親枠。縦・横・中央に配置できる。 */
+        display: grid;
+        place-items: center;
+    }
+    .box{
+        width: 300px;
+        /* height: 250px; */
+        background-color: #fff;
+        text-align: center;
+        padding: 50px 0;
+    }
+</style>
+    
+</head>
+<body>
+
+<div id="wrap"><div class="box">
+    <p id="text">カラー検索</p>
+    <input type="color" id="colorPicker">
+</div>
+</div>
+<script>
+    const wrap =document .querySelector('#wrap');
+    const colorPicker =document.querySelector('#colorPicker');
+    const text = document.querySelector('#text');
+// /function(){} ()=>{}/ 
+    colorPicker.addEventListener('input',()=>{
+        console.log(colorPicker.value);
+        text.textContent =colorPicker.value;
+        wrap .style.backgroundColor = 
+        colorPicker.value;
+    });
+
+
+</script>
+    
+</body>
+</html>
